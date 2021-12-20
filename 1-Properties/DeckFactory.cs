@@ -24,11 +24,7 @@ namespace Properties
             set => this.names = value.ToArray();
         }
 
-        // TODO improve
-        public int GetDeckSize()
-        {
-            return this.names.Length * this.seeds.Length;
-        }
+        public int GetDeckSize() => this.names.Length * this.seeds.Length;
 
         /// TODO improve
         public ISet<Card> GetDeck()
