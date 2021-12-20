@@ -10,13 +10,12 @@ namespace Properties
     public class DeckFactory
     {
         private string[] seeds;
-
         private string[] names;
 
-        // TODO improve
-        public IList<string> GetSeeds()
+        public IList<string> Seeds
         {
-            return this.seeds.ToList();
+            get => this.Seeds.ToList();
+            set => this.seeds = value.ToArray();
         }
 
         // TODO improve
