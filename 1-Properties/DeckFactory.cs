@@ -14,26 +14,14 @@ namespace Properties
 
         public IList<string> Seeds
         {
-            get => this.Seeds.ToList();
+            get => this.seeds.ToList();
             set => this.seeds = value.ToArray();
         }
 
-        // TODO improve
-        public void SetSeeds(IList<string> seeds)
+        public IList<string> Names
         {
-            this.seeds = seeds.ToArray();
-        }
-
-        // TODO improve
-        public IList<string> GetNames()
-        {
-            return this.names.ToList();
-        }
-
-        // TODO improve
-        public void SetNames(IList<string> names)
-        {
-            this.names = names.ToArray();
+            get => this.names.ToList();
+            set => this.names = value.ToArray();
         }
 
         // TODO improve
