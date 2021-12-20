@@ -57,6 +57,14 @@ namespace Properties
                        && this.Ordinal == other.Ordinal;
         }
 
+        /// <inheritdoc cref="object.Equals(object?)"/>
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj as Card);
+        }
+
         // TODO generate GetHashCode()
     }
 }
