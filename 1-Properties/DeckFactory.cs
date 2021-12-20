@@ -24,25 +24,24 @@ namespace Properties
             set => this.names = value.ToArray();
         }
 
-        public int GetDeckSize() => this.names.Length * this.seeds.Length;
+        public int DeckSize { get => this.names.Length * this.seeds.Length; }
 
-        /// TODO improve
-        public ISet<Card> GetDeck()
+        public ISet<Card> Deck
         {
-            if (this.names == null || this.seeds == null)
+            get
             {
-                throw new InvalidOperationException();
-            }
+                if (this.names == null || this.seeds == null) throw new InvalidOperationException();
 
-            return new HashSet<Card>(Enumerable
-                .Range(0, this.names.Length)
-                .SelectMany(i => Enumerable
-                    .Repeat(i, this.seeds.Length)
-                    .Zip(
-                        Enumerable.Range(0, this.seeds.Length),
-                        (n, s) => Tuple.Create(this.names[n], this.seeds[s], n)))
-                .Select(tuple => new Card(tuple))
-                .ToList());
+                return new HashSet<Card>(Enumerable
+                    .Range(0, this.names.Length)
+                    .SelectMany(i => Enumerable
+                        .Repeat(i, this.seeds.Length)
+                        .Zip(
+                            Enumerable.Range(0, this.seeds.Length),
+                            (n, s) => Tuple.Create(this.names[n], this.seeds[s], n)))
+                    .Select(tuple => new Card(tuple))
+                    .ToList());
+            }
         }
     }
 }
