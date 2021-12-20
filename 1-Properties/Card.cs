@@ -7,9 +7,9 @@ namespace Properties
     /// </summary>
     public class Card
     {
-        private readonly string seed;
-        private readonly string name;
-        private readonly int ordinal;
+        public string Seed { get; private set; }
+        public string Name { get; private set; }
+        public int Ordinal { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
@@ -30,24 +30,6 @@ namespace Properties
         /// <param name="tuple">the informations about the card as a tuple.</param>
         internal Card(Tuple<string, string, int> tuple) : this(tuple.Item1, tuple.Item2, tuple.Item3)
         {
-        }
-
-        // TODO improve
-        public string GetSeed()
-        {
-            return this.seed;
-        }
-
-        // TODO improve
-        public string GetName()
-        {
-            return this.name;
-        }
-
-        // TODO improve
-        public int GetOrdinal()
-        {
-            return this.ordinal;
         }
 
         /// <inheritdoc cref="object.ToString"/>
