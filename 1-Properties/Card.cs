@@ -32,14 +32,30 @@ namespace Properties
         {
         }
 
-        /// <inheritdoc cref="object.ToString"/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Card"/> class.
+        /// </summary>
+        /// <param name="tuple">the informations about the card as a tuple.</param>
         public override string ToString()
         {
             // TODO understand string interpolation
             return $"{this.GetType().Name}(Name={this.Name}, Seed={this.Seed}, Ordinal={this.Ordinal})";
         }
 
-        // TODO generate Equals(object obj)
+        /// <summary>
+        /// Determines whether two instances of the <see cref="Card"/> class are equal.
+        /// </summary>
+        /// <param name="other">the instances of <see cref="Card"/> class to compare.</param>
+        /// <returns>true if the two instaces are equal, false otherwise</returns>
+        public bool Equals(Card other)
+        {
+            if (this == other)
+                return true;
+            else
+                return string.Equals(this.Seed, other.Seed)
+                       && string.Equals(this.Name, other.Name)
+                       && this.Ordinal == other.Ordinal;
+        }
 
         // TODO generate GetHashCode()
     }
