@@ -65,6 +65,11 @@ namespace Properties
             return this.Equals(obj as Card);
         }
 
-        // TODO generate GetHashCode()
+        /// <inheritdoc cref="object.GetHashCode()"/>
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Seed, Name, Ordinal);
+        }
+
     }
 }
