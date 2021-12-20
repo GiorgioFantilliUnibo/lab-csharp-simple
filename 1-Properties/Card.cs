@@ -19,9 +19,9 @@ namespace Properties
         /// <param name="ordinal">the ordinal number of the card.</param>
         public Card(string name, string seed, int ordinal)
         {
-            Name = name;
-            Ordinal = ordinal;
-            Seed = seed;
+            this.Name = name;
+            this.Ordinal = ordinal;
+            this.Seed = seed;
         }
 
         /// <summary>
