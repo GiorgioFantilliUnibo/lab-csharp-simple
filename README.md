@@ -34,7 +34,7 @@ Questa verrà utilizzata nell'esercizio corrente, così come pure in `3-Calculus
 La classe `Program` rappresenta il punto d'ingresso dell'applicazione e, come esempio, genera alcuni numeri complessi e ne visualizza le proprietà costituenti.
 
 Scopo dell'esercizio è imparare a modellare una struttura dati immutabile e priva di stato in termini di proprietà e metodi, e implementarla per mezzo delle classi di .NET.
-In particolare, lo studente dovrà modellare ed implementare una classe una classe per i numeri complessi.
+In particolare, lo studente dovrà modellare ed implementare una classe per i numeri complessi.
 A tal fine, si prenda in considerazione la classe `Complex` ed i suggerimenti puntuali ivi forniti e se ne completi il codice affinché l'esecuzione di `Program` abbia senso.
 
 ## Esercizio 3 - Calcolo
