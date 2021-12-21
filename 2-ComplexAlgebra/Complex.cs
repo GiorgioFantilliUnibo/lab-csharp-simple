@@ -3,9 +3,6 @@ namespace ComplexAlgebra
     using System;
     /// TODO: Model Complex numbers in an object-oriented way and implement this class.
     /// TODO: In other words, you must provide a means for:
-    /// TODO: * summing up or subtracting two complex numbers
-    /// TODO: * representing a complex number as a string or the form Re +/- iIm
-    /// TODO:     - e.g. via the ToString() method
     /// TODO: * checking whether two complex numbers are equal or not
     /// TODO:     - e.g. via the Equals(object) method
     /// 
@@ -66,6 +63,18 @@ namespace ComplexAlgebra
         /// <param name="num">the complex number to sum.</param>
         /// <retuns>an instance of <see cref="Complex"/> class representing the result.</retuns>
         public Complex Plus(Complex num) => new Complex(this.Real + num.Real, this.Imaginary + num.Imaginary);
+
+        /// <summary>
+        /// Get the string rappresentation of the complex number.
+        /// </summary>
+        /// <retuns>a string representing the complex number.</retuns>
+        public override string ToString()
+        {
+            if (this.Imaginary == 0.0) return this.Real.ToString();
+            string sign = this.Imaginary >= 0 ? " + " : " - ";
+            string im = Math.Abs(this.Imaginary).ToString();
+            return this.Real.ToString() + sign + im;
+        }
 
         public static Complex operator -(Complex num) => new Complex(0, 0).Minus(num);
         public static Complex operator -(Complex num1, Complex num2) => num1.Minus(num2);
