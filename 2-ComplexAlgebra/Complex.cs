@@ -76,6 +76,34 @@ namespace ComplexAlgebra
             return this.Real.ToString() + sign + im;
         }
 
+        /// <summary>
+        /// Determines whether two instances of the <see cref="Complex"/> class are equal.
+        /// </summary>
+        /// <param name="other">the instances of <see cref="Complex"/> class to compare.</param>
+        /// <returns>true if the two instaces are equal, false otherwise</returns>
+        public bool Equals(Complex other)
+        {
+            if (this == other)
+                return true;
+            else
+                return this.Real == other.Real
+                       && this.Imaginary == other.Imaginary;
+        }
+
+        /// <inheritdoc cref="object.Equals(object?)"/>
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj as Complex);
+        }
+
+        /// <inheritdoc cref="object.GetHashCode()"/>
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Real, this.Imaginary);
+        }
+
         public static Complex operator -(Complex num) => new Complex(0, 0).Minus(num);
         public static Complex operator -(Complex num1, Complex num2) => num1.Minus(num2);
         public static Complex operator -(Complex num1, double num2) => num1.Minus(new Complex(num2, 0));
