@@ -3,8 +3,6 @@ namespace ComplexAlgebra
     using System;
     /// TODO: Model Complex numbers in an object-oriented way and implement this class.
     /// TODO: In other words, you must provide a means for:
-    /// TODO: * instantiating complex numbers
-    /// TODO: * accessing a complex number's real, and imaginary parts
     /// TODO: * accessing a complex number's modulus, and phase
     /// TODO: * complementing a complex number
     /// TODO: * summing up or subtracting two complex numbers
@@ -42,7 +40,13 @@ namespace ComplexAlgebra
         /// <summary>
         /// Get modulus of the complex number.
         /// </summary>
-        /// <retuns>an int representing the complex number modulus.</retuns>
+        /// <retuns>a double representing the complex number modulus.</retuns>
         public double Modulus => Math.Sqrt(Math.Pow(this.Real, 2) + Math.Pow(this.Immaginary, 2));
+
+        /// <summary>
+        /// Get phase of the complex number.
+        /// </summary>
+        /// <retuns>a double representing the complex number phase.</retuns>
+        public double Phase => Math.Atan2(this.Immaginary, this.Real);
     }
 }
