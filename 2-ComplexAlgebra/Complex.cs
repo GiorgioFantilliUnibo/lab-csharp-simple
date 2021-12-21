@@ -1,5 +1,6 @@
 namespace ComplexAlgebra
 {
+    using System;
     /// TODO: Model Complex numbers in an object-oriented way and implement this class.
     /// TODO: In other words, you must provide a means for:
     /// TODO: * instantiating complex numbers
@@ -38,6 +39,10 @@ namespace ComplexAlgebra
         /// </summary>
         public double Immaginary { get; }
 
-        
+        /// <summary>
+        /// Get modulus of the complex number.
+        /// </summary>
+        /// <retuns>an int representing the complex number modulus.</retuns>
+        public double Modulus => Math.Sqrt(Math.Pow(this.Real, 2) + Math.Pow(this.Immaginary, 2));
     }
 }
