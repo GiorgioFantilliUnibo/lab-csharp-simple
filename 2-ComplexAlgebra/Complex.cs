@@ -3,7 +3,6 @@ namespace ComplexAlgebra
     using System;
     /// TODO: Model Complex numbers in an object-oriented way and implement this class.
     /// TODO: In other words, you must provide a means for:
-    /// TODO: * complementing a complex number
     /// TODO: * summing up or subtracting two complex numbers
     /// TODO: * representing a complex number as a string or the form Re +/- iIm
     /// TODO:     - e.g. via the ToString() method
@@ -19,11 +18,11 @@ namespace ComplexAlgebra
         /// Build a new <see cref="Complex"/> number.
         /// </summary>
         /// <param name="real">the real part of the number.</param>
-        /// <param name="immaginary">the immaginary part of the number.</param>
-        public Complex(double real, double immaginary)
+        /// <param name="imaginary">the imaginary part of the number.</param>
+        public Complex(double real, double imaginary)
         {
             this.Real = real;
-            this.Immaginary = immaginary;
+            this.Imaginary = imaginary;
         }
 
         /// <summary>
@@ -32,26 +31,36 @@ namespace ComplexAlgebra
         public double Real { get; }
 
         /// <summary>
-        /// Get immaginary part of the complex number.
+        /// Get imaginary part of the complex number.
         /// </summary>
-        public double Immaginary { get; }
+        public double Imaginary { get; }
 
         /// <summary>
         /// Get modulus of the complex number.
         /// </summary>
         /// <retuns>a double representing the complex number modulus.</retuns>
-        public double Modulus => Math.Sqrt(Math.Pow(this.Real, 2) + Math.Pow(this.Immaginary, 2));
+        public double Modulus => Math.Sqrt(Math.Pow(this.Real, 2) + Math.Pow(this.Imaginary, 2));
 
         /// <summary>
         /// Get phase of the complex number.
         /// </summary>
         /// <retuns>a double representing the complex number phase.</retuns>
-        public double Phase => Math.Atan2(this.Immaginary, this.Real);
+        public double Phase => Math.Atan2(this.Imaginary, this.Real);
 
         /// <summary>
         /// Get the complementary complex number.
         /// </summary>
         /// <retuns>an instance of <see cref="Complex"/> class representing the complementary.</retuns>
-        public Complex Complementary => new Complex(this.Real, -this.Immaginary);
+        public Complex Complementary => new Complex(this.Real, -this.Imaginary);
+
+        /// <summary>
+        /// Perform subtraction with the given complex number.
+        /// </summary>
+        /// <param name="num">the complex number to subtrac.</param>
+        /// <retuns>an instance of <see cref="Complex"/> class representing the result.</retuns>
+        public Complex Minus(Complex num) => new Complex(this.Real - num.Real, this.Imaginary - num.Imaginary);
+
+        public static Complex operator -(Complex num) => new Complex(0, 0).Minus(num);
+        public static Complex operator -(Complex num1, Complex num2) => num1.Minus(num2);
     }
 }
