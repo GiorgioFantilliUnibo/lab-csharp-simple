@@ -7,10 +7,10 @@ namespace Properties
     /// </summary>
     public class Card
     {
-        public string Seed { get; private set; }
-        public string Name { get; private set; }
-        public int Ordinal { get; private set; }
-
+        public string Seed { get; }
+        public string Name { get; }
+        public int Ordinal { get; }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
         /// </summary>
