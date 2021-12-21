@@ -1,9 +1,5 @@
 namespace ComplexAlgebra
 {
-    /// <summary>
-    /// A type for representing Complex numbers.
-    /// </summary>
-    ///
     /// TODO: Model Complex numbers in an object-oriented way and implement this class.
     /// TODO: In other words, you must provide a means for:
     /// TODO: * instantiating complex numbers
@@ -15,8 +11,25 @@ namespace ComplexAlgebra
     /// TODO:     - e.g. via the ToString() method
     /// TODO: * checking whether two complex numbers are equal or not
     /// TODO:     - e.g. via the Equals(object) method
+    /// 
+    /// <summary>
+    /// A type for representing Complex numbers.
+    /// </summary>
     public class Complex
     {
-        // TODO: fill this class\
+        /// <summary>
+        /// Build a new <see cref="Complex"/> number.
+        /// </summary>
+        /// <param name="name">the name of the card.</param>
+        /// <param name="seed">the seed of the card.</param>
+        /// <param name="ordinal">the ordinal number of the card.</param>
+        public Complex(int real, int immaginary)
+        {
+            this.Real = real;
+            this.Immaginary = immaginary;
+        }
+
+        public int Real { get; }
+        public int Immaginary { get; }
     }
 }
