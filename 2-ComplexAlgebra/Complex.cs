@@ -62,5 +62,6 @@ namespace ComplexAlgebra
 
         public static Complex operator -(Complex num) => new Complex(0, 0).Minus(num);
         public static Complex operator -(Complex num1, Complex num2) => num1.Minus(num2);
+        public static Complex operator -(Complex num1, double num2) => num1.Minus(new Complex(num2, 0));
     }
 }
