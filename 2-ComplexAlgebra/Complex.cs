@@ -20,16 +20,24 @@ namespace ComplexAlgebra
         /// <summary>
         /// Build a new <see cref="Complex"/> number.
         /// </summary>
-        /// <param name="name">the name of the card.</param>
-        /// <param name="seed">the seed of the card.</param>
-        /// <param name="ordinal">the ordinal number of the card.</param>
-        public Complex(int real, int immaginary)
+        /// <param name="real">the real part of the number.</param>
+        /// <param name="immaginary">the immaginary part of the number.</param>
+        public Complex(double real, double immaginary)
         {
             this.Real = real;
             this.Immaginary = immaginary;
         }
 
-        public int Real { get; }
-        public int Immaginary { get; }
+        /// <summary>
+        /// Get real part of the complex number.
+        /// </summary>
+        public double Real { get; }
+
+        /// <summary>
+        /// Get immaginary part of the complex number.
+        /// </summary>
+        public double Immaginary { get; }
+
+        
     }
 }
