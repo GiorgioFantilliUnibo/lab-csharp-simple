@@ -60,8 +60,17 @@ namespace ComplexAlgebra
         /// <retuns>an instance of <see cref="Complex"/> class representing the result.</retuns>
         public Complex Minus(Complex num) => new Complex(this.Real - num.Real, this.Imaginary - num.Imaginary);
 
+        /// <summary>
+        /// Perform sum with the given complex number.
+        /// </summary>
+        /// <param name="num">the complex number to sum.</param>
+        /// <retuns>an instance of <see cref="Complex"/> class representing the result.</retuns>
+        public Complex Plus(Complex num) => new Complex(this.Real + num.Real, this.Imaginary + num.Imaginary);
+
         public static Complex operator -(Complex num) => new Complex(0, 0).Minus(num);
         public static Complex operator -(Complex num1, Complex num2) => num1.Minus(num2);
         public static Complex operator -(Complex num1, double num2) => num1.Minus(new Complex(num2, 0));
+        public static Complex operator +(Complex num1, Complex num2) => num1.Plus(num2);
+        public static Complex operator +(Complex num1, double num2) => num1.Plus(new Complex(num2, 0));
     }
 }
