@@ -37,7 +37,10 @@ namespace Arrays
         /// <exception cref="NullReferenceException">if <paramref name="array"/> is <c>null</c></exception>
         public static Complex[] Clone(Complex[] array)
         {
-            return null; // TODO: remove this line
+            Complex[] ret = new Complex[array.Length];
+            for (int i = 0; i < array.Length; i++)
+                ret[i] = array[i];
+            return ret;
         }
 
         /// <summary>
