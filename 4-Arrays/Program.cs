@@ -88,7 +88,7 @@ namespace Arrays
             {
                 ret = ret + ", " + array[i].ToString();
             }
-            return ret;
+            return ret + "]";
         }
         
         /// <summary>
