@@ -57,6 +57,9 @@ namespace Calculus
                 this.Reset();
         }
 
+        /// <summary>
+        /// Let to reset the calculator.
+        /// </summary>
         public void Reset()
         {
             this._intermediateValue = null;
