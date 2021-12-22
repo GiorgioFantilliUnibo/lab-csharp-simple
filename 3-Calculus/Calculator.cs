@@ -45,6 +45,8 @@ namespace Calculus
 
         /// <summary>
         /// Let to request the calculation of the final result.
+        /// If the current value has not been set, the calculator will reset.
+        /// If the operation to perform has not been set or the one setted is not supported, the calculator will reset.
         /// </summary>
         public void ComputeResult()
         {
