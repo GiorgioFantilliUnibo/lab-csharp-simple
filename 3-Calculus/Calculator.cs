@@ -44,12 +44,12 @@ namespace Calculus
             get => this._operation;
             set
             {
-                if (this.Value == null)
+                if (!this.HasValue())
                 {
-                    if (this._operation != null) this._operation = value;
+                    if (this.HasPendingOp()) this._operation = value;
                 } else
                 {
-                    if (this._operation != null) this.ComputeResult();
+                    if (this.HasPendingOp()) this.ComputeResult();
                     this._operation = value;
                     this._intermediateValue = this.Value;
                     this.Value = null;
@@ -65,7 +65,7 @@ namespace Calculus
         /// <exception cref="InvalidOperationException">Thrown if the operation setted is not supported.</exception>
         public void ComputeResult()
         {
-            if (this.Value != null)
+            if (this.HasValue())
             {
                 Complex ris = null;
                 switch (this._operation)
@@ -102,5 +102,9 @@ namespace Calculus
             this.Reset();
             this.Value = ris;
         }
+
+        private bool HasValue() => this.Value != null;
+
+        private bool HasPendingOp() => this._operation != null;
     }
 }
