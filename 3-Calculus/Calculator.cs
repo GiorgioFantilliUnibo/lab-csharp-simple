@@ -28,6 +28,11 @@ namespace Calculus
         private Complex _intermediateValue = null;
         private char? _operation = null;
 
+        /// <summary>
+        /// Get/Set the currently shown value.
+        /// </summary>
         public Complex Value { get; set; }
+
+
     }
 }
