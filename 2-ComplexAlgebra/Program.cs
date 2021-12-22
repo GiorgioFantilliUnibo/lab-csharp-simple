@@ -16,6 +16,10 @@ namespace ComplexAlgebra
             var iPlusOne = i.Plus(one);
             var oneMinusI = one.Plus(i).Complement();
             var minusI = oneMinusI.Minus(one);
+            var onePlusIOp = one + i;
+            var iPlusOneOp = i + one;
+            var oneMinusIOp = (one + i).Complement();
+            var minusIOp = oneMinusIOp - one;
 
             Console.WriteLine(zero.Real); // 0
             Console.WriteLine(zero.Imaginary); // 0
