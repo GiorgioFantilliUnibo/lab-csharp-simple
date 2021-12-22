@@ -20,7 +20,7 @@ namespace Arrays
             for (int i = 0; i < array.Length; i++)
             {
                 var current = array[i];
-                if (current.Modulus > max.Modulus)
+                if (max == null || current.Modulus > max.Modulus)
                 {
                     max = current;
                 }
