@@ -12,9 +12,7 @@ namespace Calculus
     /// The calculator also supports resetting.
     /// </summary>
     ///
-    /// HINT: model operations as constants
     /// HINT: model the following _public_ properties methods
-    /// HINT: - a property/method for the currently shown value
     /// HINT: - a property/method to let the user request the final result
     /// HINT: - a property/method to let the user reset the calculator
     /// HINT: - a property/method to let the user request an operation
@@ -27,9 +25,9 @@ namespace Calculus
         public const char OperationPlus = '+';
         public const char OperationMinus = '-';
 
-        public Complex _display = null;
-        public char? _operation = null;
+        private Complex _intermediateValue = null;
+        private char? _operation = null;
 
-
+        public Complex Value { get; set; }
     }
 }
