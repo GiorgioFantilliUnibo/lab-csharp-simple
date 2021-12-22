@@ -12,13 +12,6 @@ namespace Calculus
     /// Whenever the final result is requested, all pending operations are performed and the final result is shown.
     /// The calculator also supports resetting.
     /// </summary>
-    ///
-    /// HINT: model the following _public_ properties methods
-    /// HINT: - a property/method to let the user request an operation
-    /// HINT: - the usual ToString() method, which is helpful for debugging
-    /// HINT: - you may exploit as many _private_ fields/methods/properties as you like
-    ///
-    /// TODO: implement the calculator class in such a way that the Program below works as expected
     class Calculator
     {
         public const char OperationPlus = '+';
