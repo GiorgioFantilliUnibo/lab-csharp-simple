@@ -66,5 +66,11 @@ namespace Calculus
             this._operation = null;
             this.Value = null;
         }
+
+        private void Reset(Complex ris)
+        {
+            this.Reset();
+            this.Value = ris;
+        }
     }
 }
