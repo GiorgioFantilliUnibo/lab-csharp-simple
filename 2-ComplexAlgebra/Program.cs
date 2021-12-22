@@ -52,6 +52,13 @@ namespace ComplexAlgebra
             Console.WriteLine(onePlusI.ToString()); // 1 + i
             Console.WriteLine(onePlusI.Equals(iPlusOne)); // true
 
+            Console.WriteLine(onePlusIOp.Real); // 1
+            Console.WriteLine(onePlusIOp.Imaginary); // 1
+            Console.WriteLine(onePlusIOp.Modulus); // 1,4142135623730951 (Math.Sqrt(2))
+            Console.WriteLine(onePlusIOp.Phase); // 0,7853981633974483 (Math.PI / 4)
+            Console.WriteLine(onePlusIOp.ToString()); // 1 + i
+            Console.WriteLine(onePlusIOp.Equals(iPlusOne)); // true
+
             Console.WriteLine("---");
 
             Console.WriteLine(iPlusOne.Real); // 1
@@ -61,6 +68,13 @@ namespace ComplexAlgebra
             Console.WriteLine(iPlusOne.ToString()); // 1 + i
             Console.WriteLine(iPlusOne.Equals(onePlusI)); // true
 
+            Console.WriteLine(iPlusOneOp.Real); // 1
+            Console.WriteLine(iPlusOneOp.Imaginary); // 1
+            Console.WriteLine(iPlusOneOp.Modulus); // 1,4142135623730951 (Math.Sqrt(2))
+            Console.WriteLine(iPlusOneOp.Phase); // 0,7853981633974483 (Math.PI / 4)
+            Console.WriteLine(iPlusOneOp.ToString()); // 1 + i
+            Console.WriteLine(iPlusOneOp.Equals(onePlusI)); // true
+
             Console.WriteLine("---");
 
             Console.WriteLine(oneMinusI.Real);  // 1
@@ -69,6 +83,12 @@ namespace ComplexAlgebra
             Console.WriteLine(oneMinusI.Phase);  // -0,7853981633974483 (-Math.PI / 4)
             Console.WriteLine(oneMinusI.ToString());  // 1 - i
 
+            Console.WriteLine(oneMinusIOp.Real);  // 1
+            Console.WriteLine(oneMinusIOp.Imaginary);  // -1
+            Console.WriteLine(oneMinusIOp.Modulus);  // 1,4142135623730951 (Math.Sqrt(2))
+            Console.WriteLine(oneMinusIOp.Phase);  // -0,7853981633974483 (-Math.PI / 4)
+            Console.WriteLine(oneMinusIOp.ToString());  // 1 - i
+
             Console.WriteLine("---");
 
             Console.WriteLine(minusI.Real);  // 0
@@ -76,6 +96,12 @@ namespace ComplexAlgebra
             Console.WriteLine(minusI.Modulus);  // 1
             Console.WriteLine(minusI.Phase);  // -1,5707963267948966 (Math.PI / 2)
             Console.WriteLine(minusI.ToString());  // -i
+
+            Console.WriteLine(minusIOp.Real);  // 0
+            Console.WriteLine(minusIOp.Imaginary);  // -1
+            Console.WriteLine(minusIOp.Modulus);  // 1
+            Console.WriteLine(minusIOp.Phase);  // -1,5707963267948966 (Math.PI / 2)
+            Console.WriteLine(minusIOp.ToString());  // -i
         }
     }
 }
