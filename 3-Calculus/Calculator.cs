@@ -27,10 +27,12 @@ namespace Calculus
 
         /// <summary>
         /// Get/Set the operation to perform.
+        /// <para>
         /// If the calculator is reset, do nothing.
         /// If an operation has already been set, but not the second operand, the old operation
         /// will be replaced with the new one.
         /// If there is an operation pending it is executed and the result set as current value.
+        /// </para>
         /// </summary>
         public char? Operation
         {
@@ -52,8 +54,10 @@ namespace Calculus
 
         /// <summary>
         /// Let to request the calculation of the final result.
+        /// <para>
         /// If the current value has not been set, the calculator will reset.
         /// If the operation to perform has not been set, the calculator will reset.
+        /// </para>
         /// </summary>
         /// <exception cref="InvalidOperationException">Thrown if the operation setted is not supported.</exception>
         public void ComputeResult()
@@ -93,7 +97,7 @@ namespace Calculus
         /// <summary>
         /// Get the internal status of the calculator.
         /// </summary>
-        /// <retuns>a string representing the internal status of the calculator.</retuns>
+        /// <retuns>a <see cref="String"/> representing the internal status of the calculator.</retuns>
         public override string ToString()
         {
             string val = this.HasValue() ? this.Value.ToString() : "null";
