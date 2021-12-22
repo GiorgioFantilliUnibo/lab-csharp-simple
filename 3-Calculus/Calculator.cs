@@ -38,7 +38,7 @@ namespace Calculus
         {
             if (this.Value != null)
             {
-                Complex ris;
+                Complex ris = null;
                 switch (this._operation)
                 {
                     case OperationPlus:
@@ -48,7 +48,6 @@ namespace Calculus
                         ris = this._intermediateValue - this.Value;
                         break;
                     case null:
-                        ris = null;
                         break;
                 }
                 this.Reset(ris);
