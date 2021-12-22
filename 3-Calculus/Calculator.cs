@@ -13,8 +13,6 @@ namespace Calculus
     /// </summary>
     ///
     /// HINT: model the following _public_ properties methods
-    /// HINT: - a property/method to let the user request the final result
-    /// HINT: - a property/method to let the user reset the calculator
     /// HINT: - a property/method to let the user request an operation
     /// HINT: - the usual ToString() method, which is helpful for debugging
     /// HINT: - you may exploit as many _private_ fields/methods/properties as you like
@@ -33,6 +31,9 @@ namespace Calculus
         /// </summary>
         public Complex Value { get; set; }
 
+        /// <summary>
+        /// Let to request the calculation of the final result.
+        /// </summary>
         public void ComputeResult()
         {
             if (this.Value != null)
