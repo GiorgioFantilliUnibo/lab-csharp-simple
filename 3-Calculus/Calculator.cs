@@ -1,4 +1,5 @@
 using ComplexAlgebra;
+using System;
 
 namespace Calculus
 {
@@ -46,8 +47,9 @@ namespace Calculus
         /// <summary>
         /// Let to request the calculation of the final result.
         /// If the current value has not been set, the calculator will reset.
-        /// If the operation to perform has not been set or the one setted is not supported, the calculator will reset.
+        /// If the operation to perform has not been set, the calculator will reset.
         /// </summary>
+        /// <exception cref="InvalidOperationException">Thrown if the operation setted is not supported.</exception>
         public void ComputeResult()
         {
             if (this.Value != null)
@@ -63,6 +65,8 @@ namespace Calculus
                         break;
                     case null:
                         break;
+                    default:
+                        throw new InvalidOperationException();
                 }
                 this.Reset(ris);
             }
