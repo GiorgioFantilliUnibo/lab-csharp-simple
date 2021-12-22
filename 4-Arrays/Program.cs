@@ -81,18 +81,19 @@ namespace Arrays
         /// <param name="array">an array of <see cref="Complex"/> numbers</param>
         /// <returns>a string</returns>
         /// <exception cref="NullReferenceException">if <paramref name="array"/> is <c>null</c></exception>
-        /// 
-        /// TODO: implement this method
         public static string ArrayToString(Complex[] array)
         {
-            return null; // TODO: remove this line
+            string ret = $"[{array[0]}";
+            for (int i = 1; i < array.Length; i++)
+            {
+                ret = ret + ", " + array[i].ToString();
+            }
+            return ret;
         }
         
         /// <summary>
         /// Test method for the aforementioned array algorithms
         /// </summary>
-        /// 
-        /// TODO: uncomment the commented code, if any
         static void Main(string[] args)
         {
             Complex[] numbers = new[] {
@@ -122,7 +123,7 @@ namespace Arrays
             var cloned = numbers;
 
             ArraysAreEqual(cloned, numbers);
-            // ArraysAreEqual(SortByPhase(numbers), orderedByPhase);
+            ArraysAreEqual(SortByPhase(numbers), orderedByPhase);
             ArraysAreEqual(numbers, cloned);
             CheckComplexNumber(MaxModulus(numbers), new Complex(0, -4));
             CheckComplexNumber(MaxModulus(orderedByPhase), new Complex(0, -4));
