@@ -50,13 +50,15 @@ namespace Arrays
         /// <param name="array">an array of <see cref="Complex"/> numbers</param>
         /// <returns>the shallow copy of <paramref name="array"/></returns>
         /// <exception cref="NullReferenceException">if <paramref name="array"/> is <c>null</c></exception>
-        ///
-        /// TODO: implement this method
-        /// TODO: (consider reusing the Clone method)
         /// <seealso cref="Examples.BubbleSort"/>
         public static Complex[] SortByPhase(Complex[] array)
         {
-            return null; // TODO: remove this line
+            return SortImpl(Clone(array));
+        }
+
+        private static Complex[] SortImpl(Complex[] array)
+        {
+            return null;
         }
         
         /// <summary>
