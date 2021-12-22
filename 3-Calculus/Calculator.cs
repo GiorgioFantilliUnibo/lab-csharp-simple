@@ -97,6 +97,17 @@ namespace Calculus
             this.Value = null;
         }
 
+        /// <summary>
+        /// Get the internal status of the calculator.
+        /// </summary>
+        /// <retuns>a string representing the internal status of the calculator.</retuns>
+        public override string ToString()
+        {
+            string val = this.HasValue() ? this.Value.ToString() : "null";
+            string op = this.HasPendingOp() ? this._operation.ToString() : "null";
+            return $"Value: {val}, Operation: {op}";
+        }
+
         private void Reset(Complex ris)
         {
             this.Reset();
