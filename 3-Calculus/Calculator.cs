@@ -33,6 +33,27 @@ namespace Calculus
         /// </summary>
         public Complex Value { get; set; }
 
-
+        public void ComputeResult()
+        {
+            if (this.Value != null)
+            {
+                Complex ris;
+                switch (this._operation)
+                {
+                    case OperationPlus:
+                        ris = this._intermediateValue + this.Value;
+                        break;
+                    case OperationMinus:
+                        ris = this._intermediateValue - this.Value;
+                        break;
+                    case null:
+                        ris = null;
+                        break;
+                }
+                this.Reset(ris);
+            }
+            else
+                this.Reset();
+        }
     }
 }
