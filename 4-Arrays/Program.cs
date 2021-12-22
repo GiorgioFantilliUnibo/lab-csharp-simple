@@ -58,7 +58,19 @@ namespace Arrays
 
         private static Complex[] SortImpl(Complex[] array)
         {
-            return null;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i - 1; j >= 0; j--)
+                {
+                    if (array[j + 1].Phase < array[j].Phase)
+                    {
+                        var temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+            return array;
         }
         
         /// <summary>
