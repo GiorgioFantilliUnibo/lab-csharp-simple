@@ -34,13 +34,26 @@ namespace Calculus
 
         /// <summary>
         /// Get/Set the operation to perform.
+        /// If the calculator is reset, do nothing.
+        /// If an operation has already been set, but not the second operand, the old operation
+        /// will be replaced with the new one.
+        /// If there is an operation pending it is executed and the result set as current value.
         /// </summary>
         public char? Operation
         {
             get => this._operation;
             set
             {
-
+                if (this.Value == null)
+                {
+                    if (this._operation != null) this._operation = value;
+                } else
+                {
+                    if (this._operation != null) this.ComputeResult();
+                    this._operation = value;
+                    this._intermediateValue = this.Value;
+                    this.Value = null;
+                }
             }
         }
 
