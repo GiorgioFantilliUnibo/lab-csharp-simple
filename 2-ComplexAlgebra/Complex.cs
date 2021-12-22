@@ -1,11 +1,7 @@
 namespace ComplexAlgebra
 {
     using System;
-    /// TODO: Model Complex numbers in an object-oriented way and implement this class.
-    /// TODO: In other words, you must provide a means for:
-    /// TODO: * checking whether two complex numbers are equal or not
-    /// TODO:     - e.g. via the Equals(object) method
-    /// 
+    
     /// <summary>
     /// A type for representing Complex numbers.
     /// </summary>
