@@ -44,7 +44,7 @@ namespace ComplexAlgebra
         /// Get the complementary complex number.
         /// </summary>
         /// <retuns>an instance of <see cref="Complex"/> class representing the complementary.</retuns>
-        public Complex Complementary => new Complex(this.Real, -this.Imaginary);
+        public Complex Complement() => new Complex(this.Real, -this.Imaginary);
 
         /// <summary>
         /// Perform subtraction with the given complex number.
