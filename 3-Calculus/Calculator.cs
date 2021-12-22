@@ -56,5 +56,12 @@ namespace Calculus
             else
                 this.Reset();
         }
+
+        public void Reset()
+        {
+            this._intermediateValue = null;
+            this._operation = null;
+            this.Value = null;
+        }
     }
 }
