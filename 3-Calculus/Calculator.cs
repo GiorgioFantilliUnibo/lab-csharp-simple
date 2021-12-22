@@ -32,6 +32,18 @@ namespace Calculus
         public Complex Value { get; set; }
 
         /// <summary>
+        /// Get/Set the operation to perform.
+        /// </summary>
+        public char? Operation
+        {
+            get => this._operation;
+            set
+            {
+
+            }
+        }
+
+        /// <summary>
         /// Let to request the calculation of the final result.
         /// </summary>
         public void ComputeResult()
