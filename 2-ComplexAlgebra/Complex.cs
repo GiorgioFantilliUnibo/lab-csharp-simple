@@ -66,10 +66,26 @@ namespace ComplexAlgebra
         /// <retuns>a string representing the complex number.</retuns>
         public override string ToString()
         {
-            if (this.Imaginary == 0.0) return this.Real.ToString();
-            string sign = this.Imaginary >= 0 ? " + " : " - ";
+            string re = this.Real.ToString();
+            if (this.Imaginary == 0.0) return re;
+
+            string sign = "";
+            if (this.Imaginary < 0)
+            {
+                sign = "-";
+            } else if (re != "0")
+            {
+                sign = "+";
+            }
+            if (re == "0") re = "";
+
             string im = Math.Abs(this.Imaginary).ToString();
-            return this.Real.ToString() + sign + im;
+            if (im == "1")
+                im = sign + "i";
+            else
+                im = sign + im + "i";
+            
+            return re + im;
         }
 
         /// <summary>
