@@ -8,6 +8,8 @@ namespace Indexers
     /// <inheritdoc cref="IMap2D{TKey1,TKey2,TValue}" />
     public class Map2D<TKey1, TKey2, TValue> : IMap2D<TKey1, TKey2, TValue>
     {
+        private readonly Dictionary<Tuple<TKey1, TKey2>, TValue> BidimMap = new Dictionary<Tuple<TKey1, TKey2>, TValue>();
+
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.NumberOfElements" />
         public int NumberOfElements
         {
