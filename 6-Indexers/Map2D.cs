@@ -11,13 +11,7 @@ namespace Indexers
         private readonly Dictionary<Tuple<TKey1, TKey2>, TValue> BidimMap = new Dictionary<Tuple<TKey1, TKey2>, TValue>();
 
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.NumberOfElements" />
-        public int NumberOfElements
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int NumberOfElements => this.BidimMap.Count;
 
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.this" />
         public TValue this[TKey1 key1, TKey2 key2]
