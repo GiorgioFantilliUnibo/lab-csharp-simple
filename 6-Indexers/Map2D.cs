@@ -61,15 +61,21 @@ namespace Indexers
         /// <inheritdoc cref="IEquatable{T}.Equals(T)" />
         public bool Equals(IMap2D<TKey1, TKey2, TValue> other)
         {
-            // TODO: improve
-            return base.Equals(other);
+            return this.Equals(other);
+        }
+
+        /// <inheritdoc cref="IEquatable{T}.Equals(T)" />
+        public bool Equals(Map2D<TKey1, TKey2, TValue> other)
+        {
+            return this == other || Object.Equals(this.BidimMap, other.BidimMap);
         }
 
         /// <inheritdoc cref="object.Equals(object?)" />
         public override bool Equals(object obj)
         {
-            // TODO: improve
-            return base.Equals(obj);
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj as Map2D<TKey1, TKey2, TValue>);
         }
 
         /// <inheritdoc cref="object.GetHashCode"/>
