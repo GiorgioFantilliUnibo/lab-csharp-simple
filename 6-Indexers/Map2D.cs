@@ -41,7 +41,9 @@ namespace Indexers
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.GetElements" />
         public IList<Tuple<TKey1, TKey2, TValue>> GetElements()
         {
-            throw new NotImplementedException();
+            return this.BidimMap.Keys
+                                .Select(e => Tuple.Create(e.Item1, e.Item2, this.BidimMap[e]))
+                                .ToList();
         }
 
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.Fill(IEnumerable{TKey1}, IEnumerable{TKey2}, Func{TKey1, TKey2, TValue})" />
