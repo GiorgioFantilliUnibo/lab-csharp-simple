@@ -170,7 +170,7 @@ namespace Iterators
                 if (predicate(e))
                     yield return e;
                 else
-                    break,
+                    break;
             }
         }
 
