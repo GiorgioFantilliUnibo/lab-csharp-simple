@@ -99,9 +99,16 @@ namespace Iterators
         /// <typeparam name="TAny">the type of the items in the sequence.</typeparam>
         /// <typeparam name="TOther">the type of the accomulation result.</typeparam>
         /// <returns>the new sequence.</returns>
-        public static TOther Reduce<TAny, TOther>(this IEnumerable<TAny> sequence, TOther seed, Func<TOther, TAny, TOther> reducer)
+        public static TOther Reduce<TAny, TOther>(this IEnumerable<TAny> sequence,
+                                                  TOther seed,
+                                                  Func<TOther, TAny, TOther> reducer)
         {
-            throw new NotImplementedException();
+            TOther accumulator = seed;
+            foreach (var e in sequence)
+            {
+                accumulator = reducer(accumulator, e);
+            }
+            return accumulator;
         }
 
         /// <summary>
