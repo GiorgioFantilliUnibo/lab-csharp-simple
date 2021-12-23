@@ -16,8 +16,8 @@ namespace Indexers
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.this" />
         public TValue this[TKey1 key1, TKey2 key2]
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get => this.BidimMap[Tuple.Create(key1, key2)];
+            set => this.BidimMap[Tuple.Create(key1, key2)] = value;
         }
 
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.GetRow(TKey1)" />
