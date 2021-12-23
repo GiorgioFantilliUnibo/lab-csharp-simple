@@ -122,7 +122,17 @@ namespace Iterators
         /// <returns>the new sequence.</returns>
         public static IEnumerable<TAny> SkipWhile<TAny>(this IEnumerable<TAny> sequence, Predicate<TAny> predicate)
         {
-            throw new NotImplementedException();
+            bool addAll = false;
+            foreach (var e in sequence)
+            {
+                if (addAll)
+                    yield return e;
+                else if (!predicate(e))
+                {
+                    addAll = true;
+                    yield return e;
+                }
+            }
         }
 
         /// <summary>
