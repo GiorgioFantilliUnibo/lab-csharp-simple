@@ -23,7 +23,10 @@ namespace Indexers
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.GetRow(TKey1)" />
         public IList<Tuple<TKey2, TValue>> GetRow(TKey1 key1)
         {
-            throw new NotImplementedException();
+            return this.BidimMap.Keys
+                                .Where(e => e.Item1.Equals(key1))
+                                .Select(e => Tuple.Create(e.Item2, this.BidimMap[e]))
+                                .ToList();
         }
 
         /// <inheritdoc cref="IMap2D{TKey1, TKey2, TValue}.GetColumn(TKey2)" />
